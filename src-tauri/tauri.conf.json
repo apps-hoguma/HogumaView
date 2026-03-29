@@ -1,0 +1,176 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "호구마뷰",
+  "version": "1.0.1",
+  "identifier": "com.me2.hogumaview",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1802",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "호구마뷰",
+        "width": 1280,
+        "height": 860,
+        "minWidth": 860,
+        "minHeight": 620,
+        "decorations": false,
+        "transparent": false
+      }
+    ],
+    "security": {
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "**"
+        ]
+      },
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "publisher": "HOGUMA Apps",
+    "licenseFile": "resources/LICENSE/HogumaView LICENSE.txt",
+    "targets": [
+      "nsis"
+    ],
+    "fileAssociations": [
+      {
+        "ext": [
+          "gif",
+          "webp",
+          "apng",
+          "avif",
+          "png",
+          "jpg",
+          "jpeg",
+          "jpe",
+          "jfif",
+          "bmp",
+          "dib",
+          "rle",
+          "tif",
+          "tiff",
+          "ico",
+          "icon",
+          "svg",
+          "svgz",
+          "heic",
+          "heif",
+          "jxl",
+          "jp2",
+          "j2k",
+          "jpf",
+          "jpm",
+          "jpx",
+          "wdp",
+          "hdp",
+          "tga",
+          "dds",
+          "exr",
+          "hdr",
+          "pic",
+          "pbm",
+          "pgm",
+          "ppm",
+          "pnm",
+          "qoi",
+          "psd",
+          "psb",
+          "ai",
+          "eps",
+          "epsf",
+          "epsi",
+          "xcf",
+          "cr2",
+          "cr3",
+          "nef",
+          "nrw",
+          "arw",
+          "dng",
+          "orf",
+          "rw2",
+          "raf",
+          "srw",
+          "pef",
+          "dcr",
+          "mrw",
+          "x3f",
+          "erf",
+          "raw",
+          "rwl",
+          "kdc",
+          "pcx",
+          "pict",
+          "pct",
+          "sgi",
+          "rgb",
+          "rgba",
+          "bpg",
+          "cin",
+          "dpx",
+          "fits",
+          "fts",
+          "fit",
+          "dcm",
+          "cur",
+          "ani",
+          "xpm",
+          "xbm",
+          "mng",
+          "jng",
+          "miff",
+          "palm",
+          "wbmp",
+          "otb",
+          "pam",
+          "pfm",
+          "pgx",
+          "vtf",
+          "flif",
+          "jbig",
+          "jbig2",
+          "pdf"
+        ],
+        "name": "hogumaview.image",
+        "description": "HOGUMA View File",
+        "role": "Viewer"
+      }
+    ],
+    "resources": [
+      "runtime/imagemagick-7.1.2-15/**/*",
+      "runtime/ghostscript/**/*",
+      "runtime/exiftool/**/*",
+      "resources/LICENSE/**/*"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "template": "nsis/installer.nsi",
+        "installMode": "currentUser",
+        "compression": "lzma",
+        "sidebarImage": "../아이콘/installer.bmp",
+        "installerHooks": "nsis/installer-hooks.nsh",
+        "installerIcon": "icons/icon.ico",
+        "languages": [
+          "Korean"
+        ],
+        "customLanguageFiles": {
+          "Korean": "nsis/Korean.nsh"
+        },
+        "displayLanguageSelector": false
+      }
+    }
+  }
+}
